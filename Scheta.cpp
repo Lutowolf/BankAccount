@@ -3,11 +3,16 @@
 
 using namespace std;
 
-struct account{
-    int account_Num;
-    string Name;
-    float Money;
+struct account {
+    int account_Num= 123456789;
+    string Name = "Andrey";
+    float Money = 5000;
 };
+
+void change_account(account& A) {
+    cout << endl << "введите новый баланс: ";
+    cin >> A.Money;
+}
 
 int main()
 {
@@ -19,8 +24,7 @@ int main()
     cin >> A.Name;
     cout << endl << "введите баланс: ";
     cin >> A.Money;
-    cout << endl << "введите новый баланс: ";
-    cin >> A.Money;
+    change_account(A);
     cout << endl << "Ваш счёт: ";
     cout << A.account_Num << ", " << A.Name << ", " << A.Money;
 }
